@@ -1,6 +1,6 @@
 {
   "name": "prompts-to-workflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Turns a pasted batch of prompts that do one multi-step job into a workflow, then splits it into skills: reuses skillsmith.tech skills where they fit, drafts a chain skill, and briefs only the genuinely new skills.",
   "author": {
     "name": "Abdul Rahman P Z"

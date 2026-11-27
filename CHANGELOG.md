@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 (2026-11-27)
+
+- Hands off to `workflow-router`, the new name of `caffeinity-routing`. The old name no longer exists in the published family, so skillsmith.tech's nightly skill health check flagged the handoff as dangling.
+- `catalog.py` reads the brew table from `workflow-router.tar.gz` and finds a local install under either name.
+
 ## 0.1.0 (2026-11-01)
 
 - Initial release. Turns a pasted batch of prompts that do one multi-step job into a workflow map, routes each step against the live skillsmith.tech catalog (reuse, chain, new or inline), drafts a chain skill and writes a brief per new skill. Ships `scripts/catalog.py`, which reads the live skill index and brew table and marks installed skills.

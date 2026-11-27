@@ -32,10 +32,10 @@ Needs Python 3 for `scripts/catalog.py` (standard library only; it reads the liv
 - **Does not handle:**
   - prompts that each become their own skill (`prompts-to-skill`)
   - a single idea (`draft-skill` or `skill-launch`)
-  - an outcome described without prompts (`caffeinity-routing`)
+  - an outcome described without prompts (`workflow-router`)
   - an existing skill (`tune-and-polish` or `tune-skill`)
   - packaging what it built (`prompts-to-skill-release`)
-- If the chain is already a brew (for example "crawl, fix keywords, rewrite copy" is Brew 4 · Cold brew), it says so, hands off to `caffeinity-routing`, and writes nothing new.
+- If the chain is already a brew (for example "crawl, fix keywords, rewrite copy" is Brew 4 · Cold brew), it says so, hands off to `workflow-router`, and writes nothing new.
 
 ## Test results
 

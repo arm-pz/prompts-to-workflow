@@ -3,7 +3,7 @@
 
 Reads the live skill index (name + description for every published skill),
 marks which skills are installed locally, and prints the brew table from
-caffeinity-routing's references/workflows.md so a chain can be compared with
+workflow-router's references/workflows.md (formerly caffeinity-routing) so a chain can be compared with
 the workflows that already exist.
 
     python catalog.py                 # skills + brews, markdown
@@ -27,7 +27,9 @@ from pathlib import Path
 
 SITE = "https://skillsmith.tech"
 INDEX = SITE + "/.well-known/agent-skills/index.json"
-ROUTING_ARCHIVE = SITE + "/agent-skills/caffeinity-routing.tar.gz"
+ROUTING_ARCHIVE = SITE + "/agent-skills/workflow-router.tar.gz"
+# The routing skill was renamed; an older install may still carry the old name.
+ROUTING_NAMES = ("workflow-router", "caffeinity-routing")
 SKILL_DIRS = [
     "~/.claude/skills", "~/.qoder/skills", "~/.cursor/skills", "~/.agents/skills",
     ".claude/skills", "~/.claude/plugins",
@@ -82,7 +84,7 @@ def brews_from_archive(blob):
 
 
 def brews_from_local(installed):
-    info = installed.get("caffeinity-routing")
+    info = next((installed[n] for n in ROUTING_NAMES if n in installed), None)
     if not info:
         return []
     p = Path(info["path"]) / "references" / "workflows.md"
@@ -129,7 +131,7 @@ def main():
     if not brews:
         brews = brews_from_local(installed)
         if brews:
-            notes.append("brew table read from installed caffeinity-routing")
+            notes.append("brew table read from installed workflow-router")
 
     names = sorted(set(published) | set(installed))
     if not names:
