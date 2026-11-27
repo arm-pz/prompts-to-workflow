@@ -1,6 +1,6 @@
 # Output formats
 
-Open at steps 1, 4 and 5. Formats match caffeinity-routing's `references/workflows.md`, so a confirmed workflow can be added there as a new brew without rewriting.
+Open at steps 1, 4 and 5. Formats match workflow-router's `references/workflows.md`, so a confirmed workflow can be added there as a new brew without rewriting.
 
 ## Workflow map (step 1)
 
